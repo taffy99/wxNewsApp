@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+<scroll-view scroll-x> 
+   <view class='nav-wrapper'>
+      <view  wx:for="{{navList}}" data-index='{{index}}' class="nav-item {{item.isSelected==true?'isSelected':''}}" bindtap='navSelect'>
+        {{item.navText}}
+      </view>
+   </view>
+</scroll-view>
+</view>

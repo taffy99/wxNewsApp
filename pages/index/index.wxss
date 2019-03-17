@@ -1,0 +1,21 @@
+/**index.wxss**/
+.nav-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 90rpx;
+}
+.nav-item{
+  width: 120rpx;
+  flex-shrink: 0;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #8DCBE1;
+  font-size:35rpx;
+  line-height: 80rpx;
+  border: 8rpx solid #8DCBE1;
+}
+.isSelected{
+  border-bottom: 8rpx solid #5DBACB;
+}
