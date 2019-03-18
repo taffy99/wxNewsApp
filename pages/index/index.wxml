@@ -1,10 +1,84 @@
 <!--index.wxml-->
 <view class="container">
-<scroll-view scroll-x> 
-   <view class='nav-wrapper'>
-      <view  wx:for="{{navList}}" data-index='{{index}}' class="nav-item {{item.isSelected==true?'isSelected':''}}" bindtap='navSelect'>
+  <scroll-view scroll-x>
+    <view class='nav-wrapper'>
+      <view wx:for="{{navList}}" data-index='{{index}}' class="nav-item {{item.isSelected==true?'isSelected':''}}" bindtap='navSelect'>
         {{item.navText}}
       </view>
-   </view>
-</scroll-view>
+    </view>
+  </scroll-view>
+  <scroll-view>
+    <view class='news-wrapper'>
+      <image src='../../images/news-bg.jpeg' class='newsPic' mode="scaleToFill" width="100%"></image>
+      <view class='news-list'>
+        <view class='news-item'>
+          <view class='item-left'>
+            <view class='news-titie'>陈敏尔：拥抱新时代 践行新思想 实现新作为</view>
+            <view class='news-detail'>
+              <text>人民日报 04:09</text>
+            </view>
+          </view>
+          <view class='item-right'>
+            <image src="../../images/news-sm.jpeg" class='newsPic-sm'></image>
+          </view>
+        </view>
+        <view class='news-item'>
+          <view class='item-left'>
+            <view class='news-titie'>陈敏尔：拥抱新时代 践行新思想 实现新作为</view>
+            <view class='news-detail'>
+              <text>人民日报 04:09</text>
+            </view>
+          </view>
+          <view class='item-right'>
+            <image src="../../images/news-sm.jpeg" class='newsPic-sm'></image>
+          </view>
+        </view>
+        <view class='news-item'>
+          <view class='item-left'>
+            <view class='news-titie'>陈敏尔：拥抱新时代 践行新思想 实现新作为</view>
+            <view class='news-detail'>
+              <text>人民日报 04:09</text>
+            </view>
+          </view>
+          <view class='item-right'>
+            <image src="../../images/news-sm.jpeg" class='newsPic-sm'></image>
+          </view>
+        </view>
+        <view class='news-item'>
+          <view class='item-left'>
+            <view class='news-titie'>陈敏尔：拥抱新时代 践行新思想 实现新作为</view>
+            <view class='news-detail'>
+              <text>人民日报 04:09</text>
+            </view>
+          </view>
+          <view class='item-right'>
+            <image src="../../images/news-sm.jpeg" class='newsPic-sm'></image>
+          </view>
+        </view>
+        <view class='news-item'>
+          <view class='item-left'>
+            <view class='news-titie'>陈敏尔：拥抱新时代 践行新思想 实现新作为</view>
+            <view class='news-detail'>
+              <text>人民日报 04:09</text>
+            </view>
+          </view>
+          <view class='item-right'>
+            <image src="../../images/news-sm.jpeg" class='newsPic-sm'></image>
+          </view>
+        </view>
+        <view class='news-item'>
+          <view class='item-left'>
+            <view class='news-titie'>陈敏尔：拥抱新时代 践行新思想 实现新作为</view>
+            <view class='news-detail'>
+              <text>人民日报 04:09</text>
+            </view>
+          </view>
+          <view class='item-right'>
+            <image src="../../images/news-sm.jpeg" class='newsPic-sm'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
 </view>
