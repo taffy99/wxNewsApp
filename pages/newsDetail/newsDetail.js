@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    content:[],
+    date:'',
+    source:'',
+    title:'',
+    readCount:''
   },
 
   /**
@@ -21,7 +25,26 @@ Page({
           id:id
         },
         success:(res)=>{
-          console.log(res);
+          let result = res.data.result;
+         console.log(result);
+         let content = result.content;//新闻内容
+         let date = result.date;//日期
+         let source = result.source;//来源
+         let title = result.title;//标题
+         let readCount = result.readCount;//阅读数
+          content.forEach(item=>{
+           if(item.type=="image"){
+             item.src = "http:"+item.src;
+           }
+         })
+         this.setData({
+           content: content,
+           date: date,
+           source: source,
+           title: title,
+           readCount: readCount
+         })
+
         }
       })
   },

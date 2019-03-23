@@ -1,2 +1,19 @@
 <!--pages/newsDtail/newsDtail.wxml-->
-<text>pages/newsDtail/newsDtail.wxml</text>
+<view class='detail-container'>
+  <view>{{title}}</view>
+  <view>
+    <view>{{source}}</view>
+    <view>{{date}}</view>
+    <view>阅读 {{readCount}}</view>
+  </view>
+  <view class='detail-content'>
+    <view wx:for="{{content}}">
+      <view wx:if="{{item.type=='p'}}">
+        <p> {{item.text}}</p>
+      </view>
+       <view wx:elif="{{item.type=='image'}}">
+        <image src="{{item.src}}"></image>
+       </view>
+    </view>
+  </view>
+</view>
