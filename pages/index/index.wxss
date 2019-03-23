@@ -1,11 +1,14 @@
 /**index.wxss**/
+.nav-container{
+  width: 100%;
+  position: fixed;
+  z-index:99;
+}
 .nav-wrapper{
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 90rpx;
-  z-index: 99;
-  
 }
 .nav-item{
   width: 120rpx;
@@ -14,7 +17,7 @@
   vertical-align: middle;
   color: #fff;
   background-color: #8DCBE1;
-  font-size:35rpx;
+  font-size:30rpx;
   line-height: 80rpx;
   border: 8rpx solid #8DCBE1;
 }
@@ -25,6 +28,9 @@
   background: #fff;
   margin:20rpx;
   width: 95%;
+  position: relative;
+  top:90rpx;
+  margin-bottom: 100rpx;
 }
 .newsPic{
   width: 685rpx;
