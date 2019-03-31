@@ -1,7 +1,7 @@
 <!--pages/newsDtail/newsDtail.wxml-->
 <view class='detail-container'>
-  <view>{{title}}</view>
-  <view>
+  <view class='news-title'>{{title}}</view>
+  <view class='news-source'>
     <view>{{source}}</view>
     <view>{{date}}</view>
     <view>阅读 {{readCount}}</view>
@@ -12,7 +12,7 @@
         <p> {{item.text}}</p>
       </view>
        <view wx:elif="{{item.type=='image'}}">
-        <image src="{{item.src}}"></image>
+        <image src="{{item.src}}" class='news-pic'></image>
        </view>
     </view>
   </view>

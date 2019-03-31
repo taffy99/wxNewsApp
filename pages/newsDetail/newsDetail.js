@@ -5,18 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    content:[],
-    date:'',
-    source:'',
-    title:'',
-    readCount:''
+    content:[],//新闻内容
+    date:'', //新闻日期
+    source:'', //来源
+    title:'', //标题
+    readCount:'' //阅读数
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.getNewsdetail(options.id);    
+    // console.log(options.id);
+    this.getNewsdetail(1552623252481);    
   },
   getNewsdetail(id){
       wx.request({
@@ -25,9 +26,9 @@ Page({
           id:id
         },
         success:(res)=>{
-          let result = res.data.result;
-         console.log(result);
-         let content = result.content;//新闻内容
+         let result = res.data.result;
+         //console.log(result);
+         let content = result.content ;//新闻内容
          let date = result.date;//日期
          let source = result.source;//来源
          let title = result.title;//标题

@@ -1,1 +1,22 @@
 /* pages/newsDtail/newsDtail.wxss */
+.detail-container{
+  padding:50rpx 30rpx 
+}
+.news-title{
+  font-weight: 800;
+}
+.news-source{
+  font-size:25rpx;
+  line-height: 35rpx;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.5;
+  margin:20rpx 0;
+}
+.detail-content{
+  font-size: 28rpx;
+  line-height: 42rpx;
+}
+.news-pic{
+  margin:20rpx 0;
+}
