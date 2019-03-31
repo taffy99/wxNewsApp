@@ -66,7 +66,7 @@ Page({
           //console.log(newslist);
           newslist.forEach(item=>{
             item.date = item.date.replace("T"," ").replace(".000Z","");
-            item.firstImage = "http:"+ item.firstImage;
+            item.firstImage = "http:"+ item.firstImage.replace("http:","");
           })
           this.setData({
             newsList:newslist

@@ -17,6 +17,9 @@
   font-size: 28rpx;
   line-height: 42rpx;
 }
+.news-time{
+  margin-left:-170rpx;
+}
 .news-pic{
   margin:20rpx 0;
 }

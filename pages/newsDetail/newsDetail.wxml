@@ -3,7 +3,7 @@
   <view class='news-title'>{{title}}</view>
   <view class='news-source'>
     <view>{{source}}</view>
-    <view>{{date}}</view>
+    <view class="news-time">{{time}}</view>
     <view>阅读 {{readCount}}</view>
   </view>
   <view class='detail-content'>

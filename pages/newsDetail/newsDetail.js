@@ -6,10 +6,11 @@ Page({
    */
   data: {
     content:[],//新闻内容
-    date:'', //新闻日期
+    time:'', //发布时间
     source:'', //来源
     title:'', //标题
-    readCount:'' //阅读数
+    readCount:'', //阅读数
+    newsId:'' //新闻id
   },
 
   /**
@@ -17,9 +18,9 @@ Page({
    */
   onLoad: function (options) {
     // console.log(options.id);
-    this.getNewsdetail(1552623252481);    
+    this.getNewsdetail(options.id);    
   },
-  getNewsdetail(id){
+  getNewsdetail(id,callBack){
       wx.request({
         url: 'https://test-miniprogram.com/api/news/detail',
         data:{
@@ -30,22 +31,27 @@ Page({
          //console.log(result);
          let content = result.content ;//新闻内容
          let date = result.date;//日期
+         let time = result.date.split("T")[1].split(".")[0];//发布时间
          let source = result.source;//来源
          let title = result.title;//标题
          let readCount = result.readCount;//阅读数
           content.forEach(item=>{
            if(item.type=="image"){
-             item.src = "http:"+item.src;
+             item.src = "http:"+item.src.replace("http:","");
            }
          })
          this.setData({
+           newsId:id,
            content: content,
-           date: date,
+           time: time,
            source: source,
            title: title,
            readCount: readCount
          })
 
+        },
+        complete:()=>{
+          callBack && callBack();
         }
       })
   },
@@ -81,7 +87,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+      this.getNewsdetail(this.data.newsId,()=>{
+        wx.stopPullDownRefresh();
+      })
   },
 
   /**
