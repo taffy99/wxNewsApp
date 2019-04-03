@@ -103,11 +103,14 @@ Page({
         item.isSelected = false;
       }
     });
+    //判断当前是否重复点击
+    if (navlist[selectIndex].navcode !== this.data.navSelected) {
+      this.getNewsList(navlist[selectIndex].navcode);
+    };
     this.setData({
       navList: navlist,
       navSelected:navlist[selectIndex].navcode
     });
-    this.getNewsList(this.data.navSelected);
   },
   //跳转新闻详情页
   toNewsdetail(e){
@@ -124,6 +127,4 @@ Page({
       wx.stopPullDownRefresh();
     })
   }
-
-
 })

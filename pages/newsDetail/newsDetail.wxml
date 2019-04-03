@@ -7,13 +7,13 @@
     <view>阅读 {{readCount}}</view>
   </view>
   <view class='detail-content'>
-    <view wx:for="{{content}}">
+    <block wx:for="{{content}}">
       <view wx:if="{{item.type=='p'}}">
         <p> {{item.text}}</p>
       </view>
        <view wx:elif="{{item.type=='image'}}">
         <image src="{{item.src}}" class='news-pic'></image>
        </view>
-    </view>
+    </block>
   </view>
 </view>
