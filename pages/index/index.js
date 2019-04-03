@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    defaultImg:"../../images/no-pic.jpeg", //默认图片
+    defaultSource:"未知来源",//默认来源
     navList:[
       {
         navText:'国内',
@@ -77,6 +79,16 @@ Page({
         }
       })
   },
+  errorFunction(e){ //图片返回失败
+    if(e.type=='error'){
+      let errorIndex = e.target.dataset.errorImg; //错误图片的下标
+      let newsList = this.data.newsList;
+      newsList[errorIndex].firstImage = this.data.defaultImg;//替换错误图片为默认图片
+      this.setData({
+        newsList:newsList
+      })
+    }
+  },
   //导航栏事件
   navSelect(e){
     let selectIndex = e.target.dataset.index;
@@ -105,53 +117,13 @@ Page({
     });
   },
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
     this.getNewsList(this.data.navSelected,()=>{
       wx.stopPullDownRefresh();
     })
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
   }
+
+
 })
